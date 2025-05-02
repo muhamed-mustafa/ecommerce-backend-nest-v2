@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ecommerce-backend-nest-v2
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    restart: always
