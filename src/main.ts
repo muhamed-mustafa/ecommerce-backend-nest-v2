@@ -9,8 +9,6 @@ async function bootstrap() {
   const configService: ConfigService = app.get(ConfigService);
   const port: number = configService.get<number>('PORT') || 3000;
 
-  app.setGlobalPrefix('api');
-
   app.useGlobalPipes(
     new I18nValidationPipe({
       whitelist: true,
