@@ -22,5 +22,13 @@
   "LATITUDE_MAX": "يجب ألا يزيد خط العرض عن {constraints.0}.",
   "LONGITUDE_MUST_BE_NUMBER": "يجب أن يكون خط الطول رقماً صحيحاً.",
   "LONGITUDE_MIN": "يجب ألا يقل خط الطول عن {constraints.0}.",
-  "LONGITUDE_MAX": "يجب ألا يزيد خط الطول عن {constraints.0}."
+  "LONGITUDE_MAX": "يجب ألا يزيد خط الطول عن {constraints.0}.",
+  "ADDRESS_REQUIRED": "العنوان مطلوب.",
+  "address.LATITUDE_MUST_BE_NUMBER": "يجب أن يكون خط العرض رقماً صحيحاً.",
+  "address.LATITUDE_MIN": "يجب ألا يقل خط العرض عن {constraints.0}.",
+  "address.LATITUDE_MAX": "يجب ألا يزيد خط العرض عن {constraints.0}.",
+  "address.LONGITUDE_MUST_BE_NUMBER": "يجب أن يكون خط الطول رقماً صحيحاً.",
+  "address.LONGITUDE_MIN": "يجب ألا يقل خط الطول عن {constraints.0}.",
+  "address.LONGITUDE_MAX": "يجب ألا يزيد خط الطول عن {constraints.0}.",
+  "address.ADDRESS_REQUIRED": "العنوان مطلوب."
 }

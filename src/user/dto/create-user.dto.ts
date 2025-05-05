@@ -10,6 +10,7 @@ import {
   Min,
   Max,
   ValidateNested,
+  IsDefined,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
 import { Role } from '../enums/role.enum';
@@ -118,9 +119,10 @@ export class CreateUserDto {
   @IsString({ message: i18nValidationMessage('users.PHONE_REQUIRED') })
   phone: string;
 
+  @IsDefined({ message: i18nValidationMessage('users.ADDRESS_REQUIRED') })
   @ValidateNested({ each: true })
   @Type(() => AddressDto)
-  @Transform(({ value }) => new AddressDto())
+  
   address: AddressDto;
 
   @IsEnum(Gender, { message: i18nValidationMessage('users.INVALID_GENDER') })

@@ -22,5 +22,6 @@
   "LATITUDE_MAX": "Latitude must not exceed {constraints.0}.",
   "LONGITUDE_MUST_BE_NUMBER": "Longitude must be a number.",
   "LONGITUDE_MIN": "Longitude must be at least {constraints.0}.",
-  "LONGITUDE_MAX": "Longitude must not exceed {constraints.0}."
+  "LONGITUDE_MAX": "Longitude must not exceed {constraints.0}.",
+  "ADDRESS_REQUIRED": "Address is required."
 }
