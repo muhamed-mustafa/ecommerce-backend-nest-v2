@@ -4,13 +4,9 @@ import * as crypto from 'crypto';
 import { Role } from '../enums/role.enum';
 import { Gender } from '../enums/gender.enum';
 import { USER_VALIDATION } from '../../constants/user.constants';
+import { Location } from '../../types/geo.types';
 
 export type UserDocument = HydratedDocument<User>;
-
-interface Address {
-  type: 'Point';
-  coordinates: [number, number];
-}
 
 @Schema({ timestamps: true })
 export class User extends Document {
@@ -82,20 +78,11 @@ export class User extends Document {
   phone: string;
 
   @Prop({
-    type: {
-      type: String,
-      enum: ['Point'],
-    },
-    coordinates: {
-      type: [Number],
-      required: true,
-    },
+    name: { type: String, required: true },
+    type: { type: String, enum: ['Point'], default: 'Point' },
+    coordinates: [Number]
   })
-  location: {
-    type: string;
-    coordinates: number[];
-  };
-  address: Address;
+  location: Location;
 
   @Prop({ type: Boolean, default: true })
   active: boolean;

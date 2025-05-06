@@ -2,7 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
-import { I18nValidationExceptionFilter, I18nValidationPipe } from 'nestjs-i18n';
+import { I18nValidationPipe } from 'nestjs-i18n';
+import { NestedValidationExceptionFilter } from './filters/nested-validation.exception-filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -18,9 +19,11 @@ async function bootstrap() {
   );
 
   app.useGlobalFilters(
-    new I18nValidationExceptionFilter({ detailedErrors: false }),
+    new NestedValidationExceptionFilter({ detailedErrors: false }),
   );
 
+  app.setGlobalPrefix('api');
+  
   await app.listen(port);
 }
 
