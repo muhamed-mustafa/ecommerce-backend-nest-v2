@@ -23,5 +23,12 @@
   "LONGITUDE_MUST_BE_NUMBER": "Longitude must be a number.",
   "LONGITUDE_MIN": "Longitude must be at least {constraints.0}.",
   "LONGITUDE_MAX": "Longitude must not exceed {constraints.0}.",
-  "ADDRESS_REQUIRED": "Address is required."
+  "ADDRESS_REQUIRED": "Address is required.",
+  "address.LATITUDE_MUST_BE_NUMBER": "Latitude must be a valid number.",
+  "address.LATITUDE_MIN": "Latitude must be at least {constraints.0}.",
+  "address.LATITUDE_MAX": "Latitude must not exceed {constraints.0}.",
+  "address.LONGITUDE_MUST_BE_NUMBER": "Longitude must be a valid number.",
+  "address.LONGITUDE_MIN": "Longitude must be at least {constraints.0}.",
+  "address.LONGITUDE_MAX": "Longitude must not exceed {constraints.0}.",
+  "address.ADDRESS_REQUIRED": "Address is required."
 }
