@@ -8,7 +8,7 @@ import { NestedValidationExceptionFilter } from './filters/nested-validation.exc
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService: ConfigService = app.get(ConfigService);
-  const port: number = configService.get<number>('PORT') || 3000;
+  const port: number = configService.get<number>('PORT');
 
   app.useGlobalPipes(
     new I18nValidationPipe({
