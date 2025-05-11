@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { LocationDto, CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { CreateUserDto } from './dtos/create-user.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
+import { LocationDto } from './dtos/user-location.dto';
 import { User } from './schemas/user.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
@@ -10,15 +11,15 @@ import { Location } from '../types/geo.types';
 export class UserService {
   constructor(@InjectModel(User.name) private UserModel: Model<User>) {}
   create(createUserDto: CreateUserDto) {
-    const location = this.createLocation(createUserDto.location);
+    const location = this.toGeoPoint(createUserDto.location);
     return this.UserModel.create({ ...createUserDto, location });
   }
 
-  private createLocation(location: LocationDto): Location {
+  private toGeoPoint({ longitude, latitude, name }: LocationDto): Location {
     return {
-      name: location.name?.trim(),
       type: 'Point',
-      coordinates: [location.longitude, location.latitude],
+      coordinates: [longitude, latitude],
+      name: name?.trim(),
     };
   }
 
