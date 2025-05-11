@@ -10,7 +10,7 @@ import { Location } from '../types/geo.types';
 export class UserService {
   constructor(@InjectModel(User.name) private UserModel: Model<User>) {}
   create(createUserDto: CreateUserDto) {
-    const location = this.createLocation({ name: '', latitude: 0.0, longitude: 0.0 });
+    const location = this.createLocation(createUserDto.location);
     return this.UserModel.create({ ...createUserDto, location });
   }
 

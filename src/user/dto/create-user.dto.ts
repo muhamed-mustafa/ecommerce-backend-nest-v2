@@ -121,8 +121,8 @@ export class CreateUserDto {
 
   @IsDefined({ message: i18nValidationMessage('users.ADDRESS_REQUIRED') })
   @ValidateNested({ each: true })
-  @Type(() => Location)
-  location: Location;
+  @Type(() => LocationDto)
+  location: LocationDto;
 
   @IsEnum(Gender, { message: i18nValidationMessage('users.INVALID_GENDER') })
   gender: Gender;
