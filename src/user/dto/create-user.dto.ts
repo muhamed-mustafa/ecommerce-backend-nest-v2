@@ -18,7 +18,7 @@ import { Gender } from '../enums/gender.enum';
 import { USER_VALIDATION } from '../../constants/user.constants';
 import { i18nValidationMessage } from 'nestjs-i18n';
 
-export class AddressDto {
+export class LocationDto {
   @MaxLength(USER_VALIDATION.address.NAME_MAX_LENGTH, {
     message: i18nValidationMessage('users.ADDRESS_NAME_MAX_LENGTH', {
       max: USER_VALIDATION.address.NAME_MAX_LENGTH,
@@ -121,8 +121,8 @@ export class CreateUserDto {
 
   @IsDefined({ message: i18nValidationMessage('users.ADDRESS_REQUIRED') })
   @ValidateNested({ each: true })
-  @Type(() => AddressDto)
-  address: AddressDto;
+  @Type(() => Location)
+  location: Location;
 
   @IsEnum(Gender, { message: i18nValidationMessage('users.INVALID_GENDER') })
   gender: Gender;
