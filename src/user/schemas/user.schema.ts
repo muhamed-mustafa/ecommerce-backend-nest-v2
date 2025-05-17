@@ -5,6 +5,7 @@ import { Role } from '../enums/role.enum';
 import { Gender } from '../enums/gender.enum';
 import { USER_VALIDATION } from '../../constants/user.constants';
 import { Location } from '../../types/geo.types';
+import { Optional } from '@nestjs/common';
 
 export type UserDocument = HydratedDocument<User>;
 
@@ -52,7 +53,8 @@ export class User extends Document {
   role: Role;
 
   @Prop(String)
-  avatar?: string;
+  @Optional()
+  avatar: string;
 
   @Prop({
     type: Number,
@@ -80,7 +82,7 @@ export class User extends Document {
   @Prop({
     name: { type: String, required: true },
     type: { type: String, enum: ['Point'], default: 'Point' },
-    coordinates: [Number]
+    coordinates: [Number],
   })
   location: Location;
 
