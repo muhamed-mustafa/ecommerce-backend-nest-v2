@@ -30,5 +30,7 @@
   "address.LONGITUDE_MUST_BE_NUMBER": "يجب أن يكون خط الطول رقماً صحيحاً.",
   "address.LONGITUDE_MIN": "يجب ألا يقل خط الطول عن {constraints.0}.",
   "address.LONGITUDE_MAX": "يجب ألا يزيد خط الطول عن {constraints.0}.",
-  "address.ADDRESS_REQUIRED": "العنوان مطلوب."
+  "address.ADDRESS_REQUIRED": "العنوان مطلوب.",
+  "tokenRequired": "تم رفض الوصول! رمز التحقق مطلوب.",
+  "accessDenied": "تم رفض الوصول! ليس لديك صلاحية للوصول إلى هذا المورد."
 }

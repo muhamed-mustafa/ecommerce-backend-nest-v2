@@ -8,6 +8,7 @@ import {
   I18nModule,
   QueryResolver,
 } from 'nestjs-i18n';
+import { JwtModule } from '@nestjs/jwt';
 import { join } from 'path';
 @Module({
   imports: [
@@ -34,6 +35,13 @@ import { join } from 'path';
       ],
     }),
     UserModule,
+    JwtModule.register({
+      global: true,
+      secret: process.env.JWT_SECRET,
+      signOptions: {
+        expiresIn: process.env.JWT_EXPIRATION
+      },
+    })
   ],
   controllers: [],
   providers: [],

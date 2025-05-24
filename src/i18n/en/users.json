@@ -30,5 +30,7 @@
   "address.LONGITUDE_MUST_BE_NUMBER": "Longitude must be a valid number.",
   "address.LONGITUDE_MIN": "Longitude must be at least {constraints.0}.",
   "address.LONGITUDE_MAX": "Longitude must not exceed {constraints.0}.",
-  "address.ADDRESS_REQUIRED": "Address is required."
+  "address.ADDRESS_REQUIRED": "Address is required.",
+  "tokenRequired": "Access denied! Authentication token is required.",
+  "accessDenied": "Access denied! You do not have permission to access this resource."
 }
